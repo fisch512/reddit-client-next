@@ -1,18 +1,18 @@
-import App from '../components/App'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
+import 'semantic-ui-css/components/container.css'
+import 'semantic-ui-css/components/header.css'
+
+import { Container, Header } from 'semantic-ui-react'
+import AppLayout from '../components/AppLayout'
 
 export default () => (
-  <App>
-    <Header />
-    <article>
-      <h1>Simple Reddit Client</h1>
+  <AppLayout>
+    <Container text style={{ marginTop: '6em' }}>
+      <Header as='h1' textAlign='center'>Simple Reddit Client</Header>
       <p>
         A simple reddit client using <a href='https://github.com/zeit/next.js'>Next.js</a>
         {' '}and <a href='https://github.com/apollographql/apollo-client'>Apollo</a>
         {' '}for GraphQL API calls and local state storage.
       </p>
-    </article>
-    <Footer />
-  </App>
+    </Container>
+  </AppLayout>
 )

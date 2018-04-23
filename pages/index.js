@@ -1,13 +1,9 @@
-import App from '../components/App'
-import Header from '../components/Header'
-import Footer from '../components/Footer'
-import withData from '../lib/withData'
+import AppLayout from '../components/AppLayout'
 import PostList from '../components/PostList'
+import withData from '../lib/withData'
 
 export default withData(() => (
-  <App>
-    <Header />
+  <AppLayout>
     <PostList />
-    <Footer />
-  </App>
+  </AppLayout>
 ))
