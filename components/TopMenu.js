@@ -7,6 +7,7 @@ import { Container, Dropdown, Image, Menu } from 'semantic-ui-react'
 import { withRouter } from 'next/router'
 import Link from 'next/link'
 
+//href is not passed down to <a> tags, should create a custom Link component which uses router.push directly
 const TopMenu = ({ router: { pathname } }) => (
   <Menu fixed='top' inverted>
     <Container>

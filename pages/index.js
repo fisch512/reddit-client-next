@@ -1,9 +1,14 @@
 import AppLayout from '../components/AppLayout'
-import PostList from '../components/PostList'
+import SubredditContainer from '../components/SubredditContainer'
 import withData from '../lib/withData'
+
+import 'semantic-ui-css/components/container.css'
+import { Container } from 'semantic-ui-react'
 
 export default withData(() => (
   <AppLayout>
-    <PostList />
+    <Container style={{ marginTop: '6em' }}>
+      <SubredditContainer name='dogs' sortBy='new'/>
+    </Container>
   </AppLayout>
 ))
