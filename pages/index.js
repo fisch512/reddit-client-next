@@ -8,7 +8,7 @@ import { Container } from 'semantic-ui-react'
 export default withData(() => (
   <AppLayout>
     <Container style={{ marginTop: '6em' }}>
-      <SubredditContainer name='dogs' sortBy='new'/>
+      <SubredditContainer name='cats' sortBy='new'/>
     </Container>
   </AppLayout>
 ))

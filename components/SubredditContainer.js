@@ -1,7 +1,6 @@
 import { compose, graphql } from 'react-apollo'
 import gql from 'graphql-tag'
 import ErrorMessage from './ErrorMessage'
-import Foobar from './Foobar'
 import Subreddit from './Subreddit'
 
 function SubredditContainer({ data: { loading, error, refetch, reddit } }) {
@@ -91,29 +90,23 @@ const TopListingQuery = gql`
   }
 `
 
+const addOptions = (props) => ({
+  variables: {
+    name: props.name
+  }
+})
+
 export default compose(
   graphql(NewListingQuery, {
-    options: (props) => ({
-      variables: {
-        name: props.name
-      }
-    }),
+    options: addOptions,
     skip: (props) => props.sortBy != 'new'
   }),
   graphql(HotListingQuery, {
-    options: (props) => ({
-      variables: {
-        name: props.name
-      }
-    }),
+    options: addOptions,
     skip: props => props.sortBy != 'hot'
   }),
   graphql(TopListingQuery, {
-    options: (props) => ({
-      variables: {
-        name: props.name
-      }
-    }),
+    options: addOptions,
     skip: props => props.sortBy != 'top'
   }),
 )(SubredditContainer)
