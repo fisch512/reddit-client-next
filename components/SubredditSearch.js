@@ -27,7 +27,7 @@ export default class SubredditSearch extends React.Component  {
       <div>
         <Grid centered>
           <Input
-            placeholder='Search subreddits...try cats'
+            placeholder='Search topic...try coding'
             onChange={this.handleChange}
             action={{ icon: 'search', onClick: this.handleClick}}
           />

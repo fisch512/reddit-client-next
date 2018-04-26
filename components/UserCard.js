@@ -1,9 +1,6 @@
 import 'semantic-ui-css/components/icon.css'
 import 'semantic-ui-css/components/image.css'
 import 'semantic-ui-css/components/card.css'
-import 'semantic-ui-css/themes/default/assets/fonts/icons.eot'
-import 'semantic-ui-css/themes/default/assets/fonts/icons.woff'
-import 'semantic-ui-css/themes/default/assets/fonts/icons.woff2'
 
 import { Icon, Card, Image } from 'semantic-ui-react'
 
