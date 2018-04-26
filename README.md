@@ -3,7 +3,7 @@ Simple Reddit client exploring Next and Apollo.
 
 ## Demo
 
-https://reddit-client-next-qkynljayxz.now.sh
+https://reddit-client-next-cswrmgyglw.now.sh
 
 ## Install and run
 
