@@ -1,28 +1,21 @@
 import { compose, graphql } from 'react-apollo'
 import gql from 'graphql-tag'
-import ErrorMessage from './ErrorMessage'
 import Subreddit from './Subreddit'
 
 function SubredditContainer({ data: { loading, error, refetch, reddit } }) {
-  if (error) return <ErrorMessage message='Error loading links...' />
-  if (reddit) {
-    return (
-      <div>
-        <Subreddit data={reddit.subreddit} onRefresh={refetch}/>
-      </div>
-    )
-  }
+  if (error) return <div>'Error loading links...try refetching'</div>
+  if (reddit) return <Subreddit data={reddit.subreddit} onRefresh={refetch}/>
   return <div>Loading...</div>
 }
 
 const NewListingQuery = gql`
-  query NewListingQuery($name: String!) {
+  query NewListingQuery($name: String!, $limit: Int!) {
     reddit {
       subreddit(name: $name) {
         name
         title
         publicDescription
-        newListings(limit: 10) {
+        newListings(limit: $limit) {
           fullnameId
           title
           url
@@ -46,7 +39,7 @@ const HotListingQuery = gql`
   query HotListingQuery($name: String!) {
     reddit {
       subreddit(name: $name) {
-        hotListings(limit: 10) {
+        hotListings(limit: $limit) {
           fullnameId
           title
           url
@@ -70,7 +63,7 @@ const TopListingQuery = gql`
   query TopListingQuery($name: String!) {
     reddit {
       subreddit(name: $name) {
-        topListings(limit: 10) {
+        topListings(limit: $limit) {
           fullnameId
           title
           url
@@ -92,7 +85,8 @@ const TopListingQuery = gql`
 
 const addOptions = (props) => ({
   variables: {
-    name: props.name
+    name: props.name,
+    limit: 10
   }
 })
 

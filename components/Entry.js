@@ -25,7 +25,9 @@ export default class Entry extends React.Component  {
       <Item>
         <Item.Image size='tiny' src='/static/empty.png' />
         <Item.Content>
-          <Item.Header>{this.props.data.title}</Item.Header>
+          <Item.Header as='a' target='_blank' href={this.props.data.url}>
+            {this.props.data.title}
+          </Item.Header>
           <Item.Meta>
             <span>submitted by {this.props.data.author.username}</span>
           </Item.Meta>

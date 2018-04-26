@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start"
+    "start": "cross-env NODE_ENV=production node server.js"
   },
   "keywords": [],
   "author": "Matt Fischer",
@@ -14,6 +14,8 @@
   "dependencies": {
     "@zeit/next-css": "^0.1.5",
     "apollo-boost": "^0.1.4",
+    "cross-env": "^5.1.4",
+    "express": "^4.16.3",
     "file-loader": "^1.1.11",
     "graphql": "^0.13.2",
     "graphql-tag": "^2.9.1",

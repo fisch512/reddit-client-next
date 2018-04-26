@@ -1,5 +1,8 @@
+import 'semantic-ui-css/themes/default/assets/fonts/icons.eot'
+import 'semantic-ui-css/themes/default/assets/fonts/icons.woff'
+import 'semantic-ui-css/themes/default/assets/fonts/icons.woff2'
+
 import TopMenu from './TopMenu'
-import Footer from './Footer'
 import Head from 'next/head'
 
 export default (props) => (
@@ -9,6 +12,5 @@ export default (props) => (
     </Head>
     <TopMenu />
     {props.children}
-    <Footer />
   </div>
 )
